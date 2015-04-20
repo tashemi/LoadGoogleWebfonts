@@ -34,7 +34,7 @@ function loadGoogleWebfonts($fonts, $debug = false) {
 			// create a new fallback array for storing possible fallback urls
 			$fallback_urls = array();
 			// set the basic url
-			$base_url = 'http://fonts.googleapis.com/css?family=' . str_replace(' ', '+', $font['name']);			
+			$base_url = '//fonts.googleapis.com/css?family=' . str_replace(' ', '+', $font['name']);			
 			// create a new array for storing the font weights
 			if (isset($font['weight'])){
 				$weights = explode(',', str_replace(' ', '', $font['weight']));
@@ -63,7 +63,7 @@ function loadGoogleWebfonts($fonts, $debug = false) {
 	{
 	    // if IE>8
 	    // set the basic url
-	    $no_subset_fonts = 'http://fonts.googleapis.com/css?family=';
+	    $no_subset_fonts = '//fonts.googleapis.com/css?family=';
 	    // request the link for each font
 		foreach ($array as $font) {
 			
@@ -74,7 +74,7 @@ function loadGoogleWebfonts($fonts, $debug = false) {
 					$font_family .= ':' . $weight;
 				}
 			if(isset($font['subset'])) {
-				$url = 'http://fonts.googleapis.com/css?family=' . $font_family;				
+				$url = '//fonts.googleapis.com/css?family=' . $font_family;				
 				$url .= "&subset=".$font['subset'];
 				outputFontUrl($url, $x);
 			}else{
@@ -84,7 +84,7 @@ function loadGoogleWebfonts($fonts, $debug = false) {
 			}
 		}
 		$no_subset_fonts = substr_replace($no_subset_fonts, '', -1);
-		if ($no_subset_fonts != "http://fonts.googleapis.com/css?family")
+		if ($no_subset_fonts != "//fonts.googleapis.com/css?family")
 			outputFontUrl($no_subset_fonts, $x);
 	}
 }
